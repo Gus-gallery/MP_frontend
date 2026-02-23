@@ -11,9 +11,9 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky bg-zinc-800 z-10 p-2 px-4 items-center flex justify-between border-b border-zinc-500 mb-2 shadow-xl">
-        <h1 className="font-bold text-xl">Project MarketPlace</h1>
+        <h1 className="font-ballet mt-2 text-3xl">Market</h1>
 
-            <div className='flex text-lg font-medium items-center gap-4'>
+            <div className='flex text-lg font-light items-center gap-4'>
                 <h2>
                     Artist Stories 
                 </h2>

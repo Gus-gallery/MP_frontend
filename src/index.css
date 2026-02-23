@@ -1,5 +1,43 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Bold";
+  src: url("/fonts/Bold.ttf");
+}
+
+@font-face {
+  font-family: "Medium";
+  src: url("/fonts/Medium.ttf");
+}
+
+@font-face {
+  font-family: "Regular";
+  src: url("/fonts/Regular.ttf");
+}
+
+@font-face {
+  font-family: "Thin";
+  src: url("/fonts/Thin.ttf");
+}
+
+@font-face {
+  font-family: "Light";
+  src: url("/fonts/Light.ttf");
+}
+
+@theme {
+  --color-primary: #52C835;
+  --color-secondary: #327821;
+  --color-background: #131315;
+  --color-backgroundsecondary: #1D1D1F;
+  --color-backgroundthird: #0F0F10;
+  --font-bold: "Bold";
+  --font-medium: "Medium";
+  --font-regular: "Regular";
+  --font-light: "Light";
+  --font-thin: "Thin";
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
