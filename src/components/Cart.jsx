@@ -14,15 +14,14 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className="kurv-sidebar">
-      <div className="kurv-header">
-        <h2>Din kurv</h2>
-        <button onClick={onClose}>✕</button>
+    <div className="text-left bg-zinc-600 rounded-b-xl absolute top-0 right-0 p-4 flex flex-col gap-4">
+      <div className="text-right text-lg">
+        <button className="hover:bg-zinc-400 cursor-pointer hover:text-2xl transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>
 
-      <div className="kurv-items">
+      <div className="font-light text-md">
         {items.length === 0
-          ? <p className="tom">Kurven er tom</p>
+          ? <p className="font-bold">Empty Cart</p>
           : items.map(item => (
             <div key={item.id} className="kurv-item">
               <img src={item.image} alt={item.name} />
@@ -36,10 +35,10 @@ export default function Cart({ onClose }) {
         }
       </div>
 
-      <div className="kurv-footer">
-        <p>Total: {total().toFixed(2)} kr</p>
-        <button onClick={gåTilCheckout} disabled={items.length === 0}>
-          Gå til betaling
+      <div className="">
+        <p className="mb-2">Total: {total().toFixed(2)} kr</p>
+        <button className="bg-zinc-700 hover:bg-zinc-800 transition-all px-2 cursor-pointer rounded-md py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
+          Go to payment
         </button>
       </div>
     </div>

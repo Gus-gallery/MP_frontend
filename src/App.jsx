@@ -1,19 +1,13 @@
-import { useState } from "react";
 import Cart from "./components/Cart";
-import useCart from "./store/useCart";
 import Products from "./components/Products";
+import Header from "./components/Header";
 
 export default function App() {
-  const [kurvAaben, setKurvAaben] = useState(false);
-  const count = useCart(s => s.count);
-
+  
   return (
     <div className="app">
       <header>
-        <h1>Min Webshop</h1>
-        <button className="kurv-knap" onClick={() => setKurvAaben(true)}>
-          🛒 Kurv ({count()})
-        </button>
+        <Header />
       </header>
 
       <main className="produkter">
@@ -22,7 +16,7 @@ export default function App() {
         </div>
       </main>
 
-      {kurvAaben && <Cart onClose={() => setKurvAaben(false)} />}
+      
     </div>
   );
 }
