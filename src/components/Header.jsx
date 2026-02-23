@@ -3,6 +3,7 @@ import { useState } from "react";
 import useCart from "../store/useCart";
 import Cart from './Cart';
 import { ShoppingBag } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [kurvAaben, setKurvAaben] = useState(false);
@@ -11,15 +12,15 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky bg-zinc-800 z-10 p-2 px-4 items-center flex justify-between border-b border-zinc-500 mb-2 shadow-xl">
-        <h1 className="font-medium text-xl">Project Market</h1>
+        <Link to="/" className="font-medium hover:underline text-xl">Project Market</Link>
 
             <div className='flex text-lg font-light items-center gap-4'>
-                <h2>
-                    Artist Stories 
-                </h2>
-                <h2>
+                <Link to="/stories" className="hover:underline">
+                    Stories 
+                </Link>
+                <Link to="/shop" className="hover:underline">
                     Shop
-                </h2>
+                </Link>
 
                 <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>
                  <button className="bg-zinc-700 flex flex-row gap-2 items-center hover:bg-zinc-600 transition-all px-2 py-1 rounded-md cursor-pointer"><ShoppingBag/> {(count())}</button>

@@ -1,23 +1,17 @@
-import Products from "./components/Products";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import { Routes, Route } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import Shop from "./pages/Shop";
+import Stories from "./pages/Stories";
 
 export default function App() {
   
-  return (
-    <div className="app">
-      <header className="top-0 sticky z-10">
-        <Header />
-      </header>
-
-      <main className="produkter">
-        <div>
-          <Hero />
-          <Products />
-        </div>
-      </main>
-
-      
-    </div>
+  return (     
+    <main>
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+        <Route path="/shop" element={<Shop />} />
+        <Route path="/stories" element={<Stories />} />
+      </Routes>
+    </main>
   );
 }
