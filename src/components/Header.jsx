@@ -11,14 +11,14 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky bg-zinc-800 z-10 p-2 px-4 items-center flex justify-between border-b border-zinc-500 mb-2 shadow-xl">
-        <h1 className="font-ballet mt-2 text-3xl">Market</h1>
+        <h1 className="font-medium text-xl">Project Market</h1>
 
             <div className='flex text-lg font-light items-center gap-4'>
                 <h2>
                     Artist Stories 
                 </h2>
                 <h2>
-                    Concept
+                    Shop
                 </h2>
 
                 <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>

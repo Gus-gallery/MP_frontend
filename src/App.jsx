@@ -1,6 +1,6 @@
-import Cart from "./components/Cart";
 import Products from "./components/Products";
 import Header from "./components/Header";
+import Hero from "./components/Hero";
 
 export default function App() {
   
@@ -12,6 +12,7 @@ export default function App() {
 
       <main className="produkter">
         <div>
+          <Hero />
           <Products />
         </div>
       </main>

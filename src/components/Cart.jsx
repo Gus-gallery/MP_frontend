@@ -14,16 +14,16 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className="text-left bg-zinc-600 rounded-l-xl absolute top-0 right-0 p-4 flex flex-col gap-4">
+    <div className="text-left bg-zinc-700 rounded-l-xl absolute top-0 right-0 p-4 flex flex-col gap-4">
       <div className="text-right text-lg mt-14">
         <button className="hover:bg-zinc-400 cursor-pointer hover:text-2xl transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>
 
-      <div className="font-regular text-md">
+      <div className="font-regular text-md p-2 rounded-md">
         {items.length === 0
-          ? <p className="font-bold -mb-4">Cart is empty</p>
+          ? <p className="font-refular -mb-5">Cart is empty</p>
           : items.map(item => (
-            <div key={item.id} className="flex flex-col gap-4 aspect-square h-60 text-left">
+            <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
               <img className="rounded-md border-zinc-300 border object-cover aspect-square w-40" src={item.image} alt={item.name} />
               <div>
                 <strong>{item.name}</strong>
@@ -41,7 +41,7 @@ export default function Cart({ onClose }) {
         {items.length === 0 ? null : (
         <>
           <p className="">Total: {total().toFixed(2)} DKK.</p>
-          <button className="bg-zinc-700 hover:bg-zinc-800 transition-all px-2 cursor-pointer rounded-md py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
+          <button className="bg-zinc-800 hover:bg-zinc-900 transition-all px-2 cursor-pointer rounded-md py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
             Go to payment
           </button>
         </>
