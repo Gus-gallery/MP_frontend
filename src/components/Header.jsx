@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     const [kurvAaben, setKurvAaben] = useState(false);
-  const count = useCart(s => s.count);
+  const count = useCart(s => s.items.reduce((sum, i) => sum + i.quantity, 0));
 
   return (
     <div>
-        <header section="header" className="sticky bg-linear-0 from-zinc-800 to-zinc-700 z-10 p-2 px-4 items-center flex justify-between border-b border-zinc-500 mb-2 shadow-xl">
-        <Link to="/" className="font-regular hover:underline text-xl">Project Bezos</Link>
+        <header section="header" className="sticky bg-linear-0 from-zinc-800 to-zinc-700 z-10 p-2 px-2 md:px-4 lg:px-20 items-center flex justify-between border-b border-zinc-500 mb-2 shadow-xl">
+        <Link to="/" className="font-bold hover:underline text-2xl">Bezos</Link>
 
             <div className='flex text-lg font-light items-center gap-8'>
                 <Link to="/stories" className="hover:underline">
@@ -23,7 +23,7 @@ const Header = () => {
                 </Link> */}
 
                 <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>
-                 <button className=" flex flex-row gap-2 items-center hover:bg-zinc-400/10 transition-all px-2 py-1 border border-zinc-500 cursor-pointer"><ShoppingBag/> {(count())}</button>
+                 <button className=" flex flex-row gap-2 items-center hover:bg-zinc-400/10 transition-all px-2 py-1 border border-zinc-500 cursor-pointer"><ShoppingBag/> {count}</button>
                 </div>
             </div>
         </header> 
