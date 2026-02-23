@@ -1,9 +1,7 @@
 import { useState } from "react";
-import ProductCard from "./components/ProductCard";
 import Cart from "./components/Cart";
 import useCart from "./store/useCart";
-import products from "./products";
-import "./App.css";
+import Products from "./components/Products";
 
 export default function App() {
   const [kurvAaben, setKurvAaben] = useState(false);
@@ -19,7 +17,9 @@ export default function App() {
       </header>
 
       <main className="produkter">
-        {products.map(p => <ProductCard key={p.id} product={p} />)}
+        <div>
+          <Products />
+        </div>
       </main>
 
       {kurvAaben && <Cart onClose={() => setKurvAaben(false)} />}
