@@ -14,7 +14,7 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className="text-left bg-zinc-700 rounded-l-xl absolute top-0 right-0 p-4 flex flex-col gap-4">
+    <div className="text-left bg-zinc-700 border border-zinc-400 rounded-l-xl absolute top-0 right-0 p-4 flex flex-col gap-4">
       <div className="text-right text-lg mt-14">
         <button className="hover:bg-zinc-400 cursor-pointer hover:text-2xl transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>

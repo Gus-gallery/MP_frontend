@@ -31,15 +31,15 @@
   --color-background: #131315;
   --color-backgroundsecondary: #1D1D1F;
   --color-backgroundthird: #0F0F10;
-  --font-bold: "Bold";
+  /* --font-bold: "Bold";
   --font-medium: "Medium";
   --font-regular: "Regular";
   --font-light: "Light";
-  --font-thin: "Thin";
+  --font-thin: "Thin"; */
 }
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: system-ui, Helvetica, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
