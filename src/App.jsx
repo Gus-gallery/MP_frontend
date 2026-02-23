@@ -6,7 +6,7 @@ export default function App() {
   
   return (
     <div className="app">
-      <header>
+      <header className="top-0 sticky z-10">
         <Header />
       </header>
 
