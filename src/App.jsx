@@ -3,6 +3,7 @@ import LandingPage from "./pages/LandingPage";
 import Shop from "./pages/Shop";
 import Stories from "./pages/Stories";
 import Thanks from "./pages/Thanks";
+import Cancelled from "./pages/Cancelled";
 
 export default function App() {
   
@@ -13,6 +14,7 @@ export default function App() {
         <Route path="/shop" element={<Shop />} />
         <Route path="/stories" element={<Stories />} />
         <Route path="/thanks" element={<Thanks />} />
+        <Route path="/cancelled" element={<Cancelled />} />
       </Routes>
     </main>
   );
