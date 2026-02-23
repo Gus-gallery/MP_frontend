@@ -4,7 +4,7 @@ import products from '../products'
 
 const Products = () => {
   return (
-    <div className="flex flex-row flex-wrap justify-left px-2"> 
+    <div className="flex flex-row flex-wrap justify-left px-1 -mt-1"> 
         {products.map(p => <ProductCard key={p.id} product={p} />)}
     </div>
   )
