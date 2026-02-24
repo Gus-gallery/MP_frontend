@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <div>
-        <header section="header" className="sticky bg-neutral-900 z-10 p-2 px-2 md:px-4 lg:px-20 items-center flex justify-between border-b border-neutral-700 mb-2 shadow-xl">
+        <header section="header" className="sticky bg-neutral-900 z-10 p-2 px-2 lg:px-12 items-center flex justify-between mb-2 shadow-xl">
         <Link to="/" className="font-regular hover:underline texl-lg md:text-2xl bg-gradient-to-b from-zinc-50 to-zinc-300 text-transparent bg-clip-text">Market Project</Link>
 
             <div className='flex text-md md:text-lg font-light items-center gap-4 lg:gap-8'>
@@ -23,7 +23,7 @@ const Header = () => {
                 </Link>
 
                 <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>
-                 <button className=" flex flex-row gap-2 items-center hover:bg-zinc-400/10 transition-all px-2 py-1 border border-zinc-500 cursor-pointer"><ShoppingBag/> {count}</button>
+                 <button className=" flex flex-row gap-2 items-center hover:bg-zinc-400/10 transition-all px-2 py-1 rounded-sm cursor-pointer"><ShoppingBag/> {count}</button>
                 </div>
             </div>
         </header> 

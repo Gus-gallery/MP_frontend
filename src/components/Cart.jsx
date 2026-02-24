@@ -1,4 +1,5 @@
 import useCart from "../store/useCart";
+import X from "lucide-react/dist/esm/icons/x.js";
 
 export default function Cart({ onClose }) {
   const { items, removeItem, total } = useCart();
@@ -31,7 +32,7 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className={`text-left bg-zinc-700 border-l border-b border-zinc-400 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
+    <div className={`text-left bg-neutral-800 border-l rounded-l border-b border-neutral-700 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
       <div className="text-right text-lg mt-14">
         <button className="hover:bg-zinc-400 cursor-pointer transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>
@@ -41,12 +42,12 @@ export default function Cart({ onClose }) {
           ? <p className="font-refular -mb-5">Cart is empty</p>
           : items.map(item => (
             <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
-              <img className="border-zinc-300 border object-cover aspect-square w-40" src={item.image} alt={item.name} />
+              <img className="border-zinc-300 rounded border object-cover aspect-square w-40" src={item.image} alt={item.name} />
               <div className="font-medium text-sm flex flex-col items-start gap-1">
                 <strong>{item.name}</strong>
                 <div className="flex flex-row gap-2 font-light items-center">
                 <p>{item.quantity} * {item.price} DKK.</p>
-                <button className="bg-zinc-800 rounded-full cursor-pointer hover:scale-105 hover:bg-red-700 transition-all px-1.5 w-fit -mt-4" onClick={() => removeItem(item.id)}>✕</button>
+                <button className="bg-zinc-800 rounded-full cursor-pointer hover:scale-105 hover:bg-red-900 transition-all ml-4 w-fit -mt-4" onClick={() => removeItem(item.id)}><X/></button>
                 </div>
               </div>
             </div>
@@ -58,7 +59,7 @@ export default function Cart({ onClose }) {
         {items.length === 0 ? null : (
         <>
           <p className="">Total: {total().toFixed(2)} DKK.</p>
-          <button className="bg-zinc-800 hover:bg-zinc-900 border border-zinc-400 transition-all px-2 cursor-pointer py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
+          <button className="bg-zinc-800 hover:bg-zinc-900 border border-neutral-700 rounded transition-all px-2 cursor-pointer py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
             Go to payment
           </button>
         </>
