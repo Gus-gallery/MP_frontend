@@ -8,7 +8,7 @@ const Shop = () => {
         <Header />
     </header>
     <div className='container mx-auto lg:py-16'>
-    <Products />
+      <Products />
     </div>
     </div>
   )

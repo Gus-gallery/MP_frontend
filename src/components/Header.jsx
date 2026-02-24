@@ -12,9 +12,9 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky bg-zinc-800 z-10 p-2 px-2 md:px-4 lg:px-20 items-center flex justify-between border-b border-zinc-700 mb-2 shadow-xl">
-        <Link to="/" className="font-regular hover:underline text-2xl bg-gradient-to-b from-zinc-50 to-zinc-300 text-transparent bg-clip-text">Market Project</Link>
+        <Link to="/" className="font-regular hover:underline texl-lg md:text-2xl bg-gradient-to-b from-zinc-50 to-zinc-300 text-transparent bg-clip-text">Market Project</Link>
 
-            <div className='flex text-lg font-light items-center gap-4 lg:gap-8'>
+            <div className='flex text-md md:text-lg font-light items-center gap-4 lg:gap-8'>
                 <Link to="/stories" className="hover:underline">
                     Stories 
                 </Link>
