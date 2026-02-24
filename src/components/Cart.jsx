@@ -36,15 +36,15 @@ export default function Cart({ onClose }) {
         <button className="hover:bg-zinc-400 cursor-pointer transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>
 
-      <div className="font-regular text-md p-2 rounded-md flex-1 overflow-y-auto min-h-0">
+      <div className="font-regular text-md p-2 flex-1 overflow-y-auto min-h-0">
         {items.length === 0
           ? <p className="font-refular -mb-5">Cart is empty</p>
           : items.map(item => (
             <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
-              <img className="rounded-md border-zinc-300 border object-cover aspect-square w-40" src={item.image} alt={item.name} />
-              <div>
+              <img className="border-zinc-300 border object-cover aspect-square w-40" src={item.image} alt={item.name} />
+              <div className="font-medium text-sm flex flex-col items-start gap-1">
                 <strong>{item.name}</strong>
-                <div className="flex flex-row gap-2 items-center">
+                <div className="flex flex-row gap-2 font-light items-center">
                 <p>{item.quantity} * {item.price} DKK.</p>
                 <button className="bg-zinc-800 rounded-full cursor-pointer hover:scale-105 hover:bg-red-700 transition-all px-1.5 w-fit -mt-4" onClick={() => removeItem(item.id)}>✕</button>
                 </div>
@@ -54,11 +54,11 @@ export default function Cart({ onClose }) {
         }
       </div>
 
-      <div className="items-left flex flex-col gap-4">
+      <div className="items-left flex flex-col font-medium gap-4">
         {items.length === 0 ? null : (
         <>
           <p className="">Total: {total().toFixed(2)} DKK.</p>
-          <button className="bg-zinc-800 hover:bg-zinc-900 transition-all px-2 cursor-pointer rounded-md py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
+          <button className="bg-zinc-800 hover:bg-zinc-900 border border-zinc-400 transition-all px-2 cursor-pointer py-1" onClick={gåTilCheckout} disabled={items.length === 0}>
             Go to payment
           </button>
         </>
