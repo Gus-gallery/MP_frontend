@@ -1,143 +1,131 @@
-import { useEffect, useRef } from "react";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { EffectComposer, Bloom } from "@react-three/postprocessing";
+import * as THREE from "three";
+import { useRef, useMemo } from "react";
 
-export default function TextParticles() {
-  const canvasRef = useRef(null);
+function TextParticles() {
+  const pointsRef = useRef();
+  const mouse = useRef(new THREE.Vector2(0, 0));
 
-  useEffect(() => {
-    const canvas = canvasRef.current;
+  const { positions, original } = useMemo(() => {
+    const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
 
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
 
-    const mouse = {
-      x: null,
-      y: null,
-      radius: 120,
-    };
+    canvas.width = width;
+    canvas.height = height;
 
-    window.addEventListener("mousemove", (e) => {
-      mouse.x = e.x;
-      mouse.y = e.y;
-    });
+    const isMobile = width < 600;
+    const text = "MARKET PROJECT";
 
-    class Particle {
-      constructor(x, y) {
-        this.x = x;
-        this.y = y;
-        this.baseX = x;
-        this.baseY = y;
-        this.size = 2;
-        this.density = Math.random() * 30 + 1;
-      }
+    let fontSize = 300;
+    ctx.font = `bold ${fontSize}px Helvetica`;
 
-      draw() {
-        ctx.fillStyle = "yellow";
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.shadowColor = "orange";
-        ctx.shadowBlur = 10;
-      }
-
-      update() {
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx * dx + dy * dy);
-
-        if (distance < mouse.radius) {
-          const force = (mouse.radius - distance) / mouse.radius;
-          const directionX = dx / distance;
-          const directionY = dy / distance;
-
-          this.x -= directionX * force * this.density;
-          this.y -= directionY * force * this.density;
-        } else {
-          // Smooth return (lerp)
-          this.x += (this.baseX - this.x) * 0.05;
-          this.y += (this.baseY - this.y) * 0.05;
-        }
-      }
-    }
-
-    let particleArray = [];
-
-    function getResponsiveFontSize(text) {
-        const maxWidth = window.innerWidth * 0.9;  
-        let fontSize = 300;
-      
-        ctx.font = `bold ${fontSize}px Arial`;
-        let textWidth = ctx.measureText(text).width;
-    
-        while (textWidth > maxWidth) {
-          fontSize -= 2;
-          ctx.font = `bold ${fontSize}px Helvetica`;
-          textWidth = ctx.measureText(text).width;
-        }
-      
-        return fontSize;
-      }
-
-    function init() {
-        const fontSize = getResponsiveFontSize("MARKET PROJECT");
-      ctx.fillStyle = "white";
+    while (ctx.measureText(text).width > width * 0.9) {
+      fontSize -= 1;
       ctx.font = `bold ${fontSize}px Helvetica`;
-      ctx.textAlign = "center";
+    }
 
-      ctx.fillText(
-        "MARKET PROJECT",
-        canvas.width / 2,
-        canvas.height / 2 + fontSize / 2
-      );
+    ctx.fillStyle = "white";
+    ctx.textAlign = "center";
+    ctx.textBaseline = "middle";
 
-      const textCoordinates = ctx.getImageData(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
+    if (isMobile) {
+      ctx.fillText("MARKET", width / 2, height / 2 - fontSize);
+      ctx.fillText("PROJECT", width / 2, height / 2 + fontSize);
+    } else {
+      ctx.fillText(text, width / 2, height / 2);
+    }
 
-      particleArray = [];
+    const imageData = ctx.getImageData(0, 0, width, height);
+    const gap = width < 768 ? 3 : 4;
 
-      for (let y = 0; y < textCoordinates.height; y += 4) {
-        for (let x = 0; x < textCoordinates.width; x += 4) {
-          const index = (y * textCoordinates.width + x) * 4;
+    const positions = [];
+    const original = [];
 
-          if (textCoordinates.data[index + 3] > 128) {
-            const positionX = x;
-            const positionY = y;
-            particleArray.push(new Particle(positionX, positionY));
-          }
+    for (let y = 0; y < height; y += gap) {
+      for (let x = 0; x < width; x += gap) {
+        const index = (y * width + x) * 4;
+        if (imageData.data[index + 3] > 128) {
+          const px = x - width / 2;
+          const py = height / 2 - y;
+          positions.push(px, py, 0);
+          original.push(px, py, 0);
         }
       }
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
     }
 
-    function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      for (let i = 0; i < particleArray.length; i++) {
-        particleArray[i].update();
-        particleArray[i].draw();
-      }
-
-      requestAnimationFrame(animate);
-    }
-
-    init();
-    animate();
+    return {
+      positions: new Float32Array(positions),
+      original: new Float32Array(original),
+    };
   }, []);
 
+  const geometry = useMemo(() => {
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
+    return geo;
+  }, [positions]);
+
+  useFrame(({ mouse: m }) => {
+    mouse.current.x = m.x * window.innerWidth / 2;
+    mouse.current.y = m.y * window.innerHeight / 2;
+
+    const pos = geometry.attributes.position.array;
+
+    for (let i = 0; i < pos.length; i += 3) {
+      const dx = pos[i] - mouse.current.x;
+      const dy = pos[i + 1] - mouse.current.y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      const radius = window.innerWidth < 768 ? 90 : 140;
+
+      if (dist < radius && dist > 0) {
+        const force = (radius - dist) / radius;
+        pos[i] += (dx / dist) * force * 5;
+        pos[i + 1] += (dy / dist) * force * 5;
+      } else {
+        pos[i] += (original[i] - pos[i]) * 0.05;
+        pos[i + 1] += (original[i + 1] - pos[i + 1]) * 0.05;
+      }
+    }
+
+    geometry.attributes.position.needsUpdate = true;
+  });
+
   return (
-    <canvas
-      ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        background: "#1A1A1A",
-      }}
-    />
+    <points ref={pointsRef} geometry={geometry}>
+      <pointsMaterial
+        size={1.5}
+        color={"#ff9900"}
+        transparent
+        blending={THREE.AdditiveBlending}
+        depthWrite={false}
+      />
+    </points>
+  );
+}
+
+export default function HeroParticlesWebGL() {
+  return (
+    <div style={{ position: "fixed", inset: 0, background: "#1A1A1A" }}>
+      <Canvas
+        camera={{ position: [0, 0, 500], fov: 75 }}
+        gl={{ antialias: true }}
+      >
+        <color attach="background" args={["#101010"]} />
+
+        <TextParticles />
+
+        <EffectComposer>
+          <Bloom
+            intensity={1.5}
+            luminanceThreshold={0}
+            luminanceSmoothing={1.1}
+          />
+        </EffectComposer>
+      </Canvas>
+    </div>
   );
 }
