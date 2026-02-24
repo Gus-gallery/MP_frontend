@@ -120,7 +120,7 @@ export default function HeroParticlesWebGL() {
 
         <EffectComposer>
           <Bloom
-            intensity={1.5}
+            intensity={2.5}
             luminanceThreshold={0}
             luminanceSmoothing={1.1}
           />
