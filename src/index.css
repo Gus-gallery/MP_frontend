@@ -16,11 +16,6 @@
 }
 
 @font-face {
-  font-family: "Thin";
-  src: url("/fonts/Thin.ttf");
-}
-
-@font-face {
   font-family: "Light";
   src: url("/fonts/Light.ttf");
 }
