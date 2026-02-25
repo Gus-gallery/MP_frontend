@@ -11,8 +11,8 @@ const Header = () => {
 
   return (
     <div>
-        <header section="header" className="sticky bg-neutral-900 z-10 p-2 px-2 lg:px-12 items-center flex justify-between mb-2 shadow-xl">
-        <Link to="/" className="font-light hover:underline texl-lg text-neutral-300 lg:text-xl">Market Project</Link>
+        <header section="header" className="sticky bg-neutral-900 z-10 p-2 px-2 items-center flex justify-between mb-2 shadow-xl">
+        <Link to="/" className="font-light texl-lg text-orange-500 px-2 border opacity-50 hover:opacity-100 transition-all lg:text-xl">Market Project</Link>
 
             <div className='flex text-md md:text-lg font-light text-neutral-500 items-center gap-4 lg:gap-8'>
                 <Link to="/stories" className="hover:underline hover:text-neutral-300 transition-all">
