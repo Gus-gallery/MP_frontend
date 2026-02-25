@@ -11,10 +11,10 @@ const Header = () => {
 
   return (
     <div>
-        <header section="header" className="sticky bg-neutral-900 z-10 p-2 px-2 items-center flex justify-between mb-2 shadow-xl">
-        <Link to="/" className="font-light texl-lg text-orange-500 px-2 border opacity-50 hover:opacity-100 transition-all lg:text-xl">Market Project</Link>
+        <header section="header" className="sticky z-10 p-2 px-2 items-center flex mb-2">
+        <Link to="/" className="font-light texl-lg absolute left-1/2 -translate-x-1/2 text-orange-500 px-2 text-center border opacity-50 hover:opacity-100 transition-all lg:text-xl">Market Project</Link>
 
-            <div className='flex text-md md:text-lg font-light text-neutral-500 items-center gap-4 lg:gap-8'>
+            <div className='ml-auto flex text-md md:text-lg font-light text-neutral-500 items-center gap-4 lg:gap-8'>
                 <Link to="/stories" className="hover:underline hover:text-neutral-300 transition-all">
                     Stories 
                 </Link>
