@@ -79,7 +79,7 @@ function TextParticles() {
       const dx = pos[i] - mouse.current.x;
       const dy = pos[i + 1] - mouse.current.y;
       const dist = Math.sqrt(dx * dx + dy * dy);
-      const radius = window.innerWidth < 768 ? 90 : 140;
+      const radius = window.innerWidth < 768 ? 80 : 120;
 
       if (dist < radius && dist > 0) {
         const force = (radius - dist) / radius;
@@ -97,7 +97,7 @@ function TextParticles() {
   return (
     <points ref={pointsRef} geometry={geometry}>
       <pointsMaterial
-        size={1.5}
+        size={1}
         color={"#ff9900"}
         transparent
         blending={THREE.AdditiveBlending}
