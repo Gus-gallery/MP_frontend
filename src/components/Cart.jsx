@@ -32,7 +32,7 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className={`text-left bg-neutral-800 border-l rounded-l border-b border-neutral-700 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
+    <div className={`text-left bg-neutral-800 border rounded-b mr-2 border-b border-neutral-700 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
       <div className="text-right text-lg mt-14">
         <button className="hover:bg-zinc-400 cursor-pointer transition-all bg-zinc-500 rounded-full px-2" onClick={onClose}>✕</button>
       </div>
