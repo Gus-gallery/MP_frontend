@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky z-10 p-2 px-2 items-center flex mb-2">
-        <Link to="/" className="font-light texl-lg absolute left-1/2 -translate-x-1/2 text-orange-500 px-2 text-center border opacity-50 hover:opacity-100 transition-all lg:text-xl">Market Project</Link>
+        <Link to="/" className="font-light texl-lg absolute left-1/2 -translate-x-1/2 text-orange-500 px-2 text-center border opacity-50 hover:opacity-100 transition-all lg:text-xl">MARKET PROJECT</Link>
 
             <div className='ml-auto flex text-md md:text-lg font-light text-neutral-600 items-center gap-4 lg:gap-8'>
                 <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>
@@ -22,7 +22,7 @@ const Header = () => {
         </header> 
         {kurvAaben && <Cart onClose={() => setKurvAaben(false)} />}
 
-        <div className="flex gap-8 justify-center text-md md:text-lg font-light text-neutral-500 mb-4">
+        <div className="flex gap-8 lg:gap-12 justify-center text-md md:text-lg font-light text-neutral-500 mb-4">
             <Link to="/stories" className="hover:underline hover:text-neutral-300 transition-all">
                     Artisans
             </Link>
