@@ -4,14 +4,18 @@ import TextParticles from './HeroText';
 const Hero = () => {
   return (
     <div className="items-center flex flex-col mx-auto py-20">
-        
-          <div>
+      <div className=''>
+        <video className="absolute top-0 left-0 w-full h-full opacity-50 object-cover" autoPlay playsInline loop muted>
+          <source src="/bg_vid.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+
+      </div>
+
+          {/* <div>
             <TextParticles />
-          </div>
+          </div> */}
           
-          {/* <h1 className="font-light cursor-default text-4xl lg:text-6xl text-center mt-2 mb-2 md:blur-xl hover:blur-none transition-all duration-300 ease-in-out">
-              Market Project
-          </h1> */}
     </div>
   )
 }
