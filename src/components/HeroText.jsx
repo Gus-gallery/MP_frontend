@@ -1,13 +1,12 @@
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, } from "@react-three/fiber";
 import { EffectComposer, Bloom } from "@react-three/postprocessing";
 import * as THREE from "three";
 import { useRef, useMemo } from "react";
 
 function TextParticles() {
   const pointsRef = useRef();
-  const mouse = useRef(new THREE.Vector2(0, 0));
 
-  const { positions, original } = useMemo(() => {
+  const { positions } = useMemo(() => {
     const canvas = document.createElement("canvas");
     const ctx = canvas.getContext("2d");
 
@@ -68,31 +67,6 @@ function TextParticles() {
     geo.setAttribute("position", new THREE.BufferAttribute(positions, 3));
     return geo;
   }, [positions]);
-
-  // useFrame(({ mouse: m }) => {
-  //   mouse.current.x = m.x * window.innerWidth / 2;
-  //   mouse.current.y = m.y * window.innerHeight / 2;
-
-  //   const pos = geometry.attributes.position.array;
-
-  //   for (let i = 0; i < pos.length; i += 3) {
-  //     const dx = pos[i] - mouse.current.x;
-  //     const dy = pos[i + 1] - mouse.current.y;
-  //     const dist = Math.sqrt(dx * dx + dy * dy);
-  //     const radius = window.innerWidth < 768 ? 80 : 120;
-
-  //     if (dist < radius && dist > 0) {
-  //       const force = (radius - dist) / radius;
-  //       pos[i] += (dx / dist) * force * 5;
-  //       pos[i + 1] += (dy / dist) * force * 5;
-  //     } else {
-  //       pos[i] += (original[i] - pos[i]) * 0.05;
-  //       pos[i + 1] += (original[i + 1] - pos[i + 1]) * 0.05;
-  //     }
-  //   }
-
-  //   geometry.attributes.position.needsUpdate = true;
-  // });
 
   return (
     <points ref={pointsRef} geometry={geometry}>

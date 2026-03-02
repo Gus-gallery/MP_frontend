@@ -2,22 +2,22 @@
 
 @font-face {
   font-family: "Bold";
-  src: url("/fonts/Bold.ttf");
+  src: url("/fonts/Bolds.ttf");
 }
 
 @font-face {
   font-family: "Medium";
-  src: url("/fonts/Medium.ttf");
+  src: url("/fonts/Mediums.ttf");
 }
 
 @font-face {
   font-family: "Regular";
-  src: url("/fonts/Regular.ttf");
+  src: url("/fonts/Regulars.ttf");
 }
 
 @font-face {
   font-family: "Light";
-  src: url("/fonts/Light.ttf");
+  src: url("/fonts/Lights.ttf");
 }
 
 @theme {
