@@ -43,7 +43,7 @@ export default function Cart({ onClose }) {
           : items.map(item => (
             <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
               <img className="border-zinc-300 rounded border object-cover aspect-square w-40" src={item.image} alt={item.name} />
-              <div className="font-medium text-sm flex flex-col items-start gap-1">
+              <div className="font-regular text-sm flex flex-col items-start gap-1">
                 <strong>{item.name}</strong>
                 <div className="flex flex-row gap-2 font-light items-center">
                 <p>{item.quantity} * {item.price} DKK.</p>
@@ -55,7 +55,7 @@ export default function Cart({ onClose }) {
         }
       </div>
 
-      <div className="items-left flex flex-col font-medium gap-4">
+      <div className="items-left flex flex-col font-regular gap-4">
         {items.length === 0 ? null : (
         <>
           <p className="">Total: {total().toFixed(2)} DKK.</p>

@@ -12,10 +12,10 @@ const Header = () => {
   return (
     <div>
         <header section="header" className="sticky z-10 p-2 px-2 items-center flex mb-2">
-        <Link to="/" className="font-light texl-lg absolute left-1/2 -translate-x-1/2 text-orange-500 px-2 text-center border opacity-50 hover:opacity-100 transition-all lg:text-xl">MARKET PROJECT</Link>
+        <Link to="/" className="font-bold text-sm absolute left-1/2 -translate-x-1/2 text-orange-500 px-2 text-center opacity-50 hover:opacity-100 transition-all lg:text-xl">MARKET PROJECT</Link>
 
             <div className='ml-auto flex text-md md:text-lg font-light text-neutral-600 items-center gap-4 lg:gap-8'>
-                <div className="text-lg font-medium" onClick={() => setKurvAaben(true)}>
+                <div className="text-lg font-regular" onClick={() => setKurvAaben(true)}>
                  <button className=" flex flex-row gap-2 items-center hover:bg-zinc-400/10 hover:text-neutral-300 transition-all px-2 py-1 rounded-sm cursor-pointer"><ShoppingBag/> {count}</button>
                 </div>
             </div>
