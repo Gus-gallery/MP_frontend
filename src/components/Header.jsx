@@ -11,7 +11,7 @@ const Header = () => {
   
     return (
       <div>
-        <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-4 items-center flex mb-2 min-h-15">
+        <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-6 items-center flex mb-2 min-h-18">
           <Link 
             to="/" 
             className="font-regular text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all md:text-xl"
