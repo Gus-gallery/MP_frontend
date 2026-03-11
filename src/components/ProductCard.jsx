@@ -9,7 +9,7 @@ export default function ProductCard({ product }) {
       <div className="flex flex-col p-4 items-center transition-all ease-in-out duration-300">
         <h2 className="font-regular text-neutral-800 text-left text-sm">{product.name}</h2>
         <p className="font-light text-neutral-800 text-md mb-4">{product.price} DKK.</p>
-        <button className="font-light text-lg rounded-md bg-neutral-200 text-neutral-800 px-2 pt-1 cursor-pointer hover:bg-neutral-300 transition-all" onClick={() => addItem(product)}>Add to cart</button>
+        <button className="font-light text-lg rounded-md bg-primary text-neutral-800 px-2 pt-1 cursor-pointer hover:bg-neutral-300 transition-all" onClick={() => addItem(product)}>Add to cart</button>
       </div>
     </div>
   );

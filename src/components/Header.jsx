@@ -11,10 +11,10 @@ const Header = () => {
   
     return (
       <div>
-        <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-6 items-center flex mb-2 min-h-18">
+        <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-6 items-center flex mb-2 min-h-18 shadow-lg">
           <Link 
             to="/" 
-            className="font-regular text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all md:text-xl"
+            className="font-regular hover:scale-110 text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-xl"
           >
             MARKET
           </Link>
@@ -27,13 +27,15 @@ const Header = () => {
                 Shop
               </Link>
               
-              <div className="text-lg font-regular">
+              <div className={`text-lg font-regular ${count === 0 ? '-ml-6' : ''}`}>
+                {count > 0 && (
                 <button 
                   onClick={() => setKurvAaben(true)}
                   className="flex flex-row gap-2 items-center hover:text-neutral-800 transition-all cursor-pointer"
                 >
-                  <ShoppingBag className='mb-1'/> {count}
+                  <ShoppingBag className='mb-1 hover:scale-110 transition-all ease-in-out'/> {count}
                 </button>
+                )}
               </div>
             </div>
           </div>
