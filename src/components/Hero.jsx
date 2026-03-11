@@ -5,7 +5,7 @@ const Hero = () => {
   return (
     <div className="items-center flex flex-col mx-auto py-20">
       <div className=''>
-        <video className="absolute top-0 left-0 w-full h-full scale-200 opacity-100 object-cover" autoPlay playsInline loop muted>
+        <video className="absolute top-0 left-0 w-full h-full opacity-100 object-cover" autoPlay playsInline loop muted>
           <source src="/bg_vid_4.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
