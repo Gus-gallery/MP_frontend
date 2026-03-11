@@ -14,12 +14,12 @@ const Header = () => {
         <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-6 items-center flex mb-2 min-h-18 shadow-lg">
           <Link 
             to="/" 
-            className="font-regular hover:scale-110 text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-xl"
+            className="font-regular hover:scale-105 text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-xl"
           >
-            MARKET
+            MARKET PROJECT
           </Link>
           <div className='ml-auto flex items-center text-md md:text-lg font-light'>
-            <div className="flex items-center gap-6 md:gap-8 text-sm md:text-lg font-light text-neutral-600">
+            <div className="flex items-center gap-6 md:gap-8 text-sm md:text-xl font-light text-neutral-600">
               <Link to="/stories" className="hover:underline hover:text-neutral-800 transition-all">
                 Artisans
               </Link>
