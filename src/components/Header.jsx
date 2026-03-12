@@ -16,7 +16,7 @@ const Header = () => {
             to="/" 
             className="font-regular hover:scale-105 text-md md:pt-1 text-neutral-900 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-xl"
           >
-            MARKET PROJECT
+            KATLA
           </Link>
           <div className='ml-auto flex items-center text-md md:text-lg font-light'>
             <div className="flex items-center gap-6 md:gap-8 text-sm md:text-xl font-light text-neutral-600">
