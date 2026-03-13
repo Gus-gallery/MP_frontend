@@ -7,13 +7,13 @@ const Shop = () => {
     <header className="top-0 sticky z-10">
         <Header />
     </header>
-    <div className='mx-auto'>
+    <div className="p-8">
       <div>
-        <h1 className="text-5xl lg:text-6xl font-regular text-center mt-12 -mb-1 text-neutral-900">
+        <h1 className="text-5xl lg:text-6xl font-regular text-left -mb-1 text-neutral-900">
           KATLA SHOP
         </h1>
-        <p className="text-center font-basker-regular text-lg md:text-xl text-neutral-700 md:max-w-2xl mx-auto mb-12 px-4 ">
-          Explore our curated selection of handcrafted products, each telling a unique story of craftsmanship and culture. From intricate textiles to beautifully designed ceramics, our collection celebrates the artistry and heritage of artisans from around the world. Discover the perfect piece that resonates with your style and values, while supporting sustainable and ethical practices.
+        <p className="text-left font-basker-regular text-xl md:text-2xl text-neutral-700 md:max-w-2xl mb-8">
+          Explore our curated selection of handcrafted products. Our collection celebrates individual artists, while supporting sustainable and ethical practices.
         </p>
       </div>
       <Products />
