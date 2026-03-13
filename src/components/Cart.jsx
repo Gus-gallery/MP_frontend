@@ -32,7 +32,7 @@ export default function Cart({ onClose }) {
   }
 
   return (
-    <div className={`text-left bg-primary border-l rounded-l border-b border-neutral-300 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
+    <div className={`text-left bg-primary border-l border-b border-neutral-300 fixed top-0 right-0 p-4 flex flex-col gap-4 animate-fade-in transition-all min-w-70 min-h-45 max-h-screen`}>
       <div className="text-right text-lg mt-18">
         <button className="hover:bg-zinc-600 text-neutral-900 cursor-pointer transition-all bg-zinc-400 rounded-full " onClick={onClose}><X/></button>
       </div>
@@ -42,7 +42,7 @@ export default function Cart({ onClose }) {
           ? <p className="font-basker-regular">Cart is empty</p>
           : items.map(item => (
             <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
-              <img className="border-zinc-300 rounded border object-cover aspect-square w-40" src={item.image} alt={item.name} />
+              <img className="border-zinc-300 border object-cover aspect-square w-40" src={item.image} alt={item.name} />
               <div className="font-basker-regular text-sm flex flex-col items-start gap-1">
                 <strong>{item.name}</strong>
                 <div className="flex flex-row gap-2 font-light items-center">
