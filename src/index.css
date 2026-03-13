@@ -7,11 +7,6 @@
 
 
 @font-face {
-  font-family: "Medium";
-  src: url("/fonts/Mediums.ttf") format("truetype");
-}
-
-@font-face {
   font-family: "Regular";
   src: url("/fonts/Regulars.otf") format("truetype");
 }
@@ -21,6 +16,16 @@
   src: url("/fonts/Lights.otf") format("truetype");
 }
 
+@font-face {
+  font-family: "Basker-Regular";
+  src: url("/fonts/Basker-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Basker-Medium";
+  src: url("/fonts/Basker-Medium.ttf") format("truetype");
+}
+
 @theme {
   --color-primary: #FFFAFA;
   --color-secondary: #327821;
@@ -28,9 +33,10 @@
   --color-backgroundsecondary: #1D1D1F;
   --color-backgroundthird: #0F0F10;
   --font-bold: "Bold";
-  --font-medium: "Medium";
   --font-regular: "Regular";
   --font-light: "Light";
+  --font-basker-regular: "Basker-Regular";
+  --font-basker-medium: "Basker-Medium";
 }
 
 :root {

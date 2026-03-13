@@ -11,15 +11,15 @@ const Header = () => {
   
     return (
       <div>
-        <header section="header" className="sticky bg-primary top-0 z-10 pt-1 px-6 items-center flex mb-2 min-h-18 shadow-sm">
+        <header section="header" className="sticky bg-primary top-0 z-10 px-6 items-center flex mb-2 min-h-18 shadow-sm">
           <Link 
             to="/" 
-            className="font-bold tracking-wider hover:scale-105 text-md md:pt-1 text-sky-800 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-3xl"
+            className="font-bold tracking-wider hover:scale-105 text-2xl pt-2 text-sky-900 opacity-90 px-2 text-center transition-all ease-in-out duration-200 md:text-3xl"
           >
             KATLA
           </Link>
-          <div className='ml-auto tracking-wide flex items-center text-md md:text-lg font-light'>
-            <div className="flex items-center gap-6 md:gap-8 text-sm md:text-xl font-light text-neutral-500">
+          <div className='ml-auto tracking-wide flex items-center font-basker-regular'>
+            <div className="flex items-center gap-6 md:gap-8 text-lg md:text-xl text-neutral-600">
               <Link to="/stories" className="hover:text-neutral-800 transition-all duration-300 ease-in-out">
                 artisans
               </Link>
@@ -27,13 +27,13 @@ const Header = () => {
                 shop
               </Link>
               
-              <div className={`text-lg font-regular ${count === 0 ? '-ml-6' : ''}`}>
+              <div className={`text-xl font-medium ${count === 0 ? '-ml-6' : ''}`}>
                 {count > 0 && (
                 <button 
                   onClick={() => setKurvAaben(true)}
                   className="flex flex-row gap-2 items-center hover:text-neutral-800 transition-all cursor-pointer"
                 >
-                  <ShoppingBag className='mb-1 hover:scale-110 transition-all ease-in-out'/> {count}
+                  <ShoppingBag className='hover:scale-110 transition-all ease-in-out'/> {count}
                 </button>
                 )}
               </div>

@@ -37,13 +37,13 @@ export default function Cart({ onClose }) {
         <button className="hover:bg-zinc-600 text-neutral-900 cursor-pointer transition-all bg-zinc-400 rounded-full " onClick={onClose}><X/></button>
       </div>
 
-      <div className="font-regular text-md text-neutral-900 p-2 flex-1 overflow-y-auto min-h-0">
+      <div className="font-basker-regular text-md text-neutral-900 p-2 flex-1 overflow-y-auto min-h-0">
         {items.length === 0
-          ? <p className="font-refular">Cart is empty</p>
+          ? <p className="font-basker-regular">Cart is empty</p>
           : items.map(item => (
             <div key={item.id} className="flex flex-col items-center gap-4 aspect-square h-60 text-left">
               <img className="border-zinc-300 rounded border object-cover aspect-square w-40" src={item.image} alt={item.name} />
-              <div className="font-regular text-sm flex flex-col items-start gap-1">
+              <div className="font-basker-regular text-sm flex flex-col items-start gap-1">
                 <strong>{item.name}</strong>
                 <div className="flex flex-row gap-2 font-light items-center">
                 <p className="text-neutral-900">{item.quantity} * {item.price} DKK.</p>
@@ -55,11 +55,11 @@ export default function Cart({ onClose }) {
         }
       </div>
 
-      <div className="items-left flex flex-col font-regular gap-4">
+      <div className="items-left flex flex-col text-md md:text-lg font-basker-medium gap-2">
         {items.length === 0 ? null : (
         <>
           <p className="text-neutral-900">Total: {total().toFixed(2)} DKK.</p>
-          <button className="bg-zinc-600 hover:bg-zinc-700 border border-neutral-700 rounded transition-all px-2 cursor-pointer pt-1" onClick={gåTilCheckout} disabled={items.length === 0}>
+          <button className="bg-zinc-600 hover:bg-zinc-700 border border-neutral-700 rounded transition-all px-2 cursor-pointer" onClick={gåTilCheckout} disabled={items.length === 0}>
             Go to payment
           </button>
         </>
