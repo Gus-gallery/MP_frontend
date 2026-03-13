@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Hero from '../components/Hero'
+import UnderHero from '../components/UnderHero'
 
 const LandingPage = () => {
   return (
@@ -8,6 +9,8 @@ const LandingPage = () => {
         <Header />
     </header>
     <Hero />
+    <UnderHero />
+    
     </div>
   )
 }
