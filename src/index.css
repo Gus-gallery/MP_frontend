@@ -26,6 +26,11 @@
   src: url("/fonts/Basker-Medium.ttf") format("truetype");
 }
 
+@font-face {
+  font-family: "Basker-Bold";
+  src: url("/fonts/Basker-Bold.ttf") format("truetype");
+}
+
 @theme {
   --color-primary: #FFFAFA;
   --color-secondary: #327821;
@@ -37,6 +42,7 @@
   --font-light: "Light";
   --font-basker-regular: "Basker-Regular";
   --font-basker-medium: "Basker-Medium";
+  --font-basker-bold: "Basker-Bold";
 }
 
 :root {
