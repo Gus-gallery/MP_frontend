@@ -12,7 +12,7 @@ const Shop = () => {
         <h1 className="text-5xl lg:text-6xl font-regular text-left -mb-1 text-neutral-900">
           KATLA SHOP
         </h1>
-        <p className="text-left font-basker-regular text-xl md:text-2xl text-neutral-700 md:max-w-2xl mb-8">
+        <p className="text-left font-basker-regular text-xl md:text-2xl text-neutral-700 md:max-w-xl mb-8">
           Explore our curated selection of handcrafted products. Our collection celebrates individual artists, while supporting sustainable and ethical practices.
         </p>
       </div>
