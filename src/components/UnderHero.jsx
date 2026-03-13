@@ -9,7 +9,7 @@ const UnderHero = () => {
           className="relative h-120 bg-cover bg-center"
           style={{ backgroundImage: "url('/assets/artisans.png')" }}
         >
-          <div className="absolute" />
+          <div className="absolute inset-0 bg-black/30" />
           <Link to="/stories" className="absolute p-8 text-primary text-xl md:text-3xl">
             Read about our artisans
           </Link>
@@ -19,7 +19,7 @@ const UnderHero = () => {
           className="relative h-120 bg-cover bg-center"
           style={{ backgroundImage: "url('/assets/shop.png')" }}
         >
-          <div className="absolute" />
+          <div className="absolute inset-0 bg-black/30" />
           <Link to="/shop" className="absolute p-8 text-primary text-xl md:text-3xl">
             Explore the shop
           </Link>
