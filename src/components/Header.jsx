@@ -19,7 +19,7 @@ const Header = () => {
             KATLA
           </Link>
           <div className='ml-auto tracking-wide flex items-center font-basker-regular'>
-            <div className="flex items-center gap-6 md:gap-8 text-lg md:text-xl text-neutral-600">
+            <div className="flex items-center gap-6 md:gap-8 text-xl md:text-xl xl:text-2xl text-neutral-500">
               <Link to="/stories" className="hover:text-neutral-800 transition-all duration-300 ease-in-out">
                 artisans
               </Link>
@@ -27,7 +27,7 @@ const Header = () => {
                 shop
               </Link>
               
-              <div className={`text-xl font-medium ${count === 0 ? '-ml-6' : ''}`}>
+              <div className={`text-xl md:text-xl xl:text-2xl font-medium ${count === 0 ? '-ml-6' : ''}`}>
                 {count > 0 && (
                 <button 
                   onClick={() => setKurvAaben(true)}

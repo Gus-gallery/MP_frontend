@@ -4,9 +4,9 @@ export default function ProductCard({ product }) {
   const addItem = useCart(s => s.addItem);
 
   return (
-    <div className="flex flex-col tracking-wide gap-2 max-w-1/2 md:max-w-1/3 lg:max-w-1/4">
-      <img className=" object-cover aspect-square w-full scale-100 transition-all ease-in-out duration-300" src={product.image} alt={product.name} />
-      <div className="flex bg-primary flex-col p-4 items-center transition-all ease-in-out duration-300">
+    <div className="flex flex-col gap-2 max-w-1/2 md:max-w-1/2 lg:max-w-1/3">
+      <img className="border border-zinc-300 object-cover aspect-square w-full scale-100 transition-all ease-in-out duration-300" src={product.image} alt={product.name} />
+      <div className="border border-zinc-300 flex bg-primary flex-col p-4 items-center transition-all ease-in-out duration-300">
         <h2 className="font-basker-medium text-neutral-800 text-left text-md">{product.name}</h2>
         <p className="font-light text-neutral-800 text-md mb-4">{product.price} DKK.</p>
         <button className="font-basker-regular text-lg hover:underline text-neutral-900 px-2 cursor-pointer transition-all" onClick={() => addItem(product)}>Add to cart</button>
