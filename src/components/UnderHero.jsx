@@ -2,19 +2,30 @@ import { Link } from 'react-router-dom';
 
 const UnderHero = () => {
   return (
-    <div>
-        <div className="z-10 items-center font-light flex flex-row gap-4 w-screen justify-center mt-2">
-            <p className="font-light">
-              <Link to="/stories" className="text-neutral-50 hover:bg-sky-900 bg-sky-950 px-3 p-1 rounded-lg pt-2 transition-all text-lg shadow-md inline-block">
-                Read about our artisans
-              </Link>
-            </p>
-            <p>
-              <Link to="/shop" className="text-neutral-50 hover:bg-sky-900 bg-sky-950 px-3 p-1 rounded-lg pt-2 transition-all text-lg shadow-md inline-block">
-                   Explore the shop
-              </Link>
-            </p>
+    <div className="-mt-20 mb-2">
+      <div className="relative grid grid-cols-1 md:grid-cols-2 font-light gap-2 w-full justify-center">  
+        
+        <div
+          className="relative h-120 bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/artisans.png')" }}
+        >
+          <div className="absolute" />
+          <Link to="/stories" className="absolute p-8 text-primary text-xl md:text-3xl">
+            Read about our artisans
+          </Link>
         </div>
+
+        <div
+          className="relative h-120 bg-cover bg-center"
+          style={{ backgroundImage: "url('/assets/shop.png')" }}
+        >
+          <div className="absolute" />
+          <Link to="/shop" className="absolute p-8 text-primary text-xl md:text-3xl">
+            Explore the shop
+          </Link>
+        </div>
+
+      </div>
     </div>
   )
 }
