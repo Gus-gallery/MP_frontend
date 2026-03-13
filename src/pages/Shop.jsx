@@ -9,7 +9,7 @@ const Shop = () => {
     </header>
     <div className="p-8">
       <div>
-        <h1 className="text-left font-basker-regular text-xl md:text-2xl text-neutral-700 md:max-w-xl mb-8">
+        <h1 className="text-left font-basker-regular text-xl md:text-2xl text-neutral-700 md:max-w-xl pb-8">
           Explore our curated selection of handcrafted products. Our collection celebrates individual artisans, while supporting sustainable practices.
         </h1>
       </div>
