@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const UnderHero = () => {
   return (
     <div>
-        <div className="z-10 items-center font-light flex flex-row gap-4">
+        <div className="z-10 items-center font-light flex flex-row gap-4 w-screen justify-center mt-2">
             <p className="font-light">
               <Link to="/stories" className="text-neutral-50 hover:bg-sky-900 bg-sky-950 px-3 p-1 rounded-lg pt-2 transition-all text-lg shadow-md inline-block">
                 Read about our artisans
