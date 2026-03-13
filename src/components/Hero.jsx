@@ -11,11 +11,8 @@ const Hero = () => {
 
       <div  className="text-3xl md:text-4xl lg:text-5xl flex-col text-neutral-50 z-1 text-left md:max-w-2/3 lg:max-2-1/2 opacity-100 font-regular">
         <h1 className="mb-4">
-            KATLA IS A CELEBRATION OF CRAFTS AND CULTURE.
-        </h1>       
-        <h2> 
-          WE SELL HANDCRAFTED PRODUCTS AND TELL STORIES.
-        </h2>
+            KATLA IS A CELEBRATION OF CRAFTS AND CULTURE, SELLING HANDCRAFTED PRODUCTS AND TELLING STORIES.
+        </h1>
       </div>
     </div>
   )
