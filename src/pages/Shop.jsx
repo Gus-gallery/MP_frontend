@@ -9,7 +9,7 @@ const Shop = () => {
     </header>
     <div className='mx-auto'>
       <div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-regular tracking-wide text-center mt-12 text-neutral-900">
+        <h1 className="text-5xl lg:text-6xl font-regular text-center mt-12 -mb-1 text-neutral-900">
           KATLA SHOP
         </h1>
         <p className="text-center font-basker-regular text-lg md:text-xl text-neutral-700 md:max-w-2xl mx-auto mb-12 px-4 ">

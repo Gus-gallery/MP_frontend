@@ -33,7 +33,7 @@ const Header = () => {
                   onClick={() => setKurvAaben(true)}
                   className="flex flex-row gap-2 items-center hover:text-neutral-800 transition-all cursor-pointer"
                 >
-                  <ShoppingBag className='hover:scale-110 transition-all ease-in-out'/> {count}
+                  <ShoppingBag className='hover:scale-110 transition-all ease-in-out mt-1'/> {count}
                 </button>
                 )}
               </div>
