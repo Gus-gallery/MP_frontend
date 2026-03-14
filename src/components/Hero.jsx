@@ -9,7 +9,7 @@ const Hero = () => {
         </video>
       </div>   
 
-      <div  className="text-3xl md:text-4xl lg:text-5xl flex-col text-neutral-50 z-1 text-left md:max-w-2/3 xl:max-w-1/2 opacity-100 font-basker-medium -mt-2">
+      <div  className="text-2xl md:text-3xl lg:text-4xl flex-col text-neutral-50 z-1 text-left md:max-w-2/3 xl:max-w-1/3 opacity-100 font-basker-medium -mt-2">
         <h1 className="mb-4">
             Katla celebrates crafts and culture, selling handmade products and telling stories.
         </h1>
