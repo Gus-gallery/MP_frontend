@@ -13,7 +13,7 @@ export default function ProductCard({ product }) {
           <p className="font-basker-medium text-neutral-800 text-md mb-4">{product.price} DKK.</p>
           <p className="font-basker-regular text-neutral-800 text-md mb-4">{product.description}</p>
         </div>
-        <button className="font-basker-regular text-lg bg-zinc-600 border border-zinc-200 hover:underline text-primary px-2 cursor-pointer transition-all" onClick={() => addItem(product)}>Add to cart</button>
+        <button className="font-basker-regular text-lg bg-zinc-600 border border-zinc-200 hover:underline text-primary px-2 py-2 md:py-0 cursor-pointer transition-all" onClick={() => addItem(product)}>Add to cart</button>
       </div>
     </div>
   );
