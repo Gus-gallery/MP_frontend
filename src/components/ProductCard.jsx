@@ -4,11 +4,10 @@ export default function ProductCard({ product }) {
   const addItem = useCart(s => s.addItem);
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col bg-primary">
       <img className="object-cover aspect-square w-full scale-100 transition-all ease-in-out duration-300" src={product.image} alt={product.name} />
       
-      
-      <div className="flex bg-white flex-col p-4 items-left transition-all ease-in-out duration-300">
+      <div className="flex flex-col p-4 items-left transition-all ease-in-out duration-300">
         <h2 className="font-basker-bold text-neutral-800 text-left text-lg">{product.name}</h2>
         <p className="font-basker-medium text-neutral-800 text-md mb-4">{product.price} DKK.</p>
         <p className="font-basker-regular text-neutral-800 text-md mb-4">{product.desription}</p>
