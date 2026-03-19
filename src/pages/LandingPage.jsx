@@ -1,6 +1,7 @@
 import Header from '../components/Header'
 import Hero from '../components/Hero'
 import UnderHero from '../components/UnderHero'
+import Footer from '../components/Footer'
 
 const LandingPage = () => {
   return (
@@ -10,7 +11,7 @@ const LandingPage = () => {
     </header>
     <Hero />
     <UnderHero />
-    
+    <Footer />
     </div>
   )
 }

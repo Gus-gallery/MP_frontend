@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import Products from '../components/Products'
+import Footer from '../components/Footer'
 
 const Shop = () => {
   return (
@@ -15,6 +16,7 @@ const Shop = () => {
       </div>
       <Products />
     </div>
+    <Footer />
     </div>
   )
 }
