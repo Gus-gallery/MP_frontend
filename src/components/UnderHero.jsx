@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 const UnderHero = () => {
   return (
     <div className="-mt-20 mb-2">
-      <div className="relative grid grid-cols-1 md:grid-cols-2 font-light gap-2 w-full justify-center">  
+      <div className="relative grid grid-cols-1 md:grid-cols-2 font-basker-regular gap-2 w-full justify-center">  
         
         <div
           className="relative h-140 bg-cover bg-center"
